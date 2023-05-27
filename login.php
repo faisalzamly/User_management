@@ -14,21 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    // $admin=1;
     $query = "SELECT * FROM profile WHERE username = '$username' AND password = '$password'";
-    // $query2 = "SELECT * FROM profile WHERE username = '$username' AND password = '$password' AND admin='$admin'";
     $result = mysqli_query($conn, $query);
-    // $result2 = mysqli_query($conn, $query2);
-    // $arr=[];
-    //  for ($i = mysqli_num_rows($result2); $i >0; $i--) {
-    //     $query3 = "SELECT * FROM profile  WHERE id = '$admin'";
-    //     $result3 = mysqli_query($conn, $query3);
-    //     $row = mysqli_fetch_assoc($result3);
-    //     $username2= $row['username'];
-    //     $arr[]=$username2;
-    // } 
-    // $_SESSION['arr'] =$arr;
-
+    
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $id = $row['id'];
@@ -85,9 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="username"> username</label>
                 <input type="text"name="username" id="username" placeholder="enter username">
             </div>
-            <!-- <script>
-                document.getElementById("username").focus();
-              </script> -->
+           
             <div class="inp">
                 <label for="password"> password</label>
                 <input type="password"  name="password" id="password" placeholder="enter password">

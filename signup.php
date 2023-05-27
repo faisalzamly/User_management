@@ -37,20 +37,13 @@ if (isset($_POST['send'])) {
         $errors[] = 'password does not match';
 
     }
-    // if (count($_POST['password']) < 8) {
-    //     $errors[] = 'password does not match';
-
-    // }
+   
     if ($_POST['username'] == '') {
         $errors[] = 'username Can NOT be empty';
-        // echo '<script >';
-        // echo 'alert('cf')';
-        // echo '</script>';
+       
     }
     if($_POST['image'] !=null){
         $errors[] = 'image Can NOT be empty';}
-    // }elseif($_FILES['image']['size'] > 1024*1024) {
-    //     $errors[] = 'Image size must be less than 1 MB';
     
     else {
         $ext =  pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);

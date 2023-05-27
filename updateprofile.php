@@ -19,7 +19,6 @@ $errors = [];
 
 if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
-        // $id = $row['id'];
         $username = $row['username'];
         $email = $row['Email'];
         $admin = $row['admin'];
@@ -37,9 +36,7 @@ if (isset($_POST['send'])) {
     
     if ($_POST['username'] == '') {
         $errors[] = 'username Can NOT be empty';
-        // echo '<script >';
-        // echo 'alert('cf')';
-        // echo '</script>';
+        
     }
    
 
@@ -56,7 +53,6 @@ if (isset($_POST['send'])) {
     }
     else{
             
-        // $sql = "UPDATE profile SET username = '$username', Email = '$email', admin = '$admin' WHERE id = $id";
         $sql = "UPDATE profile SET username = '$username', Email = '$email', admin = '$admin' WHERE id = $id";
                 if ($conn->query($sql) === TRUE) {
                     echo "تم تحديث البيانات بنجاح";
@@ -129,18 +125,7 @@ if (isset($_POST['send'])) {
                 </select>
             </div>
             <?php echo 'k'; };?>
-            <!-- <div class="inp">
-                <label for="password"> password</label>
-                <input type="password" id="password"  name="password" placeholder="enter password" minlength="8">
-            </div>
-            <div class="inp">
-                <label for="surepassword"> password</label>
-                <input type="password" id="surepassword"  name="sure_password" placeholder="sure password" minlength="8">
-            </div>
-            <div >
-                <label for="formFileDisabled"  class="inp">Image</label>
-                <input name="image"  class="form-control" require type="file" id="formFileDisabled">
-            </div> -->
+            
             <div class="but">
                 <button name="send" type="submit">sign up</button>
             </div>  

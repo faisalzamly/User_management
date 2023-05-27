@@ -16,8 +16,6 @@ if (!$conn) {
 }
 
 $user_id = $_SESSION['id'];
-// $query = "SELECT * FROM profile WHERE username = $user_id";
-// $user_id = 'admin';
 $query = "SELECT * FROM profile WHERE id = $user_id";
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) == 1) {
