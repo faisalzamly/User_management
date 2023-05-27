@@ -44,6 +44,7 @@ if (isset($_POST['send'])) {
 
 
 // $pass=md5($password)
+//UPDATE
     if(count($errors) > 0) {
         echo "<ul class='text-danger'>";
         foreach($errors as $error){

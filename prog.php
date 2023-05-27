@@ -33,14 +33,13 @@ if (mysqli_num_rows($result) == 1) {
     exit;
 }
 
-
+//DELETE
 if (isset($_POST['send_d'])) {
     
     $id = $_POST['id'];
     $_SESSION['id_up'] = $id;//ssssssssssssssssssssssssssssssssssssssssssssss
     try {
         $stmt = $conn->prepare("DELETE FROM profile WHERE id = '$id'");
-        // $stmt->bindParam('s',$_SESSION['id_d']);
         $stmt->execute();
     
         echo '<script>alert("تم حذف الصف بنجاح");</script>';
@@ -50,6 +49,7 @@ if (isset($_POST['send_d'])) {
     }
     
 }
+//updateprofile
 if (isset($_POST['send_u'])) {
     
     $id = $_POST['id'];
@@ -61,76 +61,6 @@ if (isset($_POST['send_u'])) {
     exit;
     
 }
-// if (isset($_POST['send_u'])) {
-//     // $id = $_SESSION['id_d'];
-//     $id = $_POST['id'];
-//     try {
-//         echo "<script>  
-//         var variable1 = 'xx'
-//         var variable2 = prompt('email');
-//         var variable3 = prompt('admin num 1 or 0');
-
-//         var formData = new FormData();
-//         formData.append('variable1', variable1);
-//         formData.append('variable2', variable2);
-//         formData.append('variable3', variable3);
-
-//         fetch('prog.php', {
-//         method: 'POST',
-//         body: formData
-//         })
-//         .then(function(response) {
-//         return response.text();
-//         })
-//         .then(function(data) {
-//         console.log(data);
-//         })
-//         .catch(function(error) {
-//         console.log('حدث خطأ أثناء إرسال البيانات:', error);
-//         });
-
-//     </script>";
-    
-//     // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     //     $variable1 = $_POST['variable1'];
-//     //     $variable2 = 'l@gmail.com';
-//     //     $variable3 = 0;
-    
-//     //     $sql = "UPDATE profile SET username = '$variable1', Email = '$variable2', admin = '$variable3' WHERE id = $id";
-//     //     if ($conn->query($sql) === TRUE) {
-//     //         echo "تم تحديث البيانات بنجاح";
-//     //     } else {
-//     //         echo "حدث خطأ أثناء تحديث البيانات: " . $conn->error;
-//     //     }
-//     // }
-    
-//     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//         $variable1 = $_POST['variable1'];
-//         $variable2 = $_POST['variable2'];
-//         $variable3 = $_POST['variable3'];
-    
-//         $sql = "UPDATE profile SET username = '$variable1', Email = '$variable2', admin = '$variable3' WHERE id = $id";
-//     if ($conn->query($sql) === TRUE) {
-//             echo "تم تحديث البيانات بنجاح";
-//         } else {
-//             echo "حدث خطأ أثناء تحديث البيانات: " . $conn->error;
-//         }
-//     }
-    
-                                      
-                        
-                        
-
-//         // $stmt = $conn->prepare("DELETE FROM profile WHERE id = '$id'");
-//         // // $stmt->bindParam('s',$_SESSION['id_d']);
-//         // $stmt->execute();
-    
-//     } catch(PDOException $e) {
-//         echo 'فشل في حذف الصف: ' . $e->getMessage();
-//     }
-    
-// }
-// mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -193,8 +123,7 @@ if (isset($_POST['send_u'])) {
             $sql2 = "SELECT * FROM profile";
             $result2 = mysqli_query($conn, $sql2);
             $num_rows = mysqli_num_rows($result2);
-            // $stmt1 = $conn->query("SELECT id FROM profile ORDER BY id DESC LIMIT 1");
-            // $row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+          
     
             $query = "SELECT id FROM profile ORDER BY id DESC LIMIT 1";
             $result6 = $conn->query($query);
