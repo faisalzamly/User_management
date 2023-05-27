@@ -1,0 +1,120 @@
+body{
+    background-color: #F3EFE0;
+}
+section{
+    max-width: 1000px;
+    height: 100%;
+    align-items: center;
+    background-color: #ffffff;
+}
+header{
+    display: flex;
+    background-color: rgb(56, 59, 59);
+    justify-content: space-between;
+    flex-flow: row-reverse;
+}
+.logo{
+    list-style: none;
+    display: flex;
+    padding: 5px;
+    margin-left: 5px;
+    
+    
+}
+.logo li a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(182, 176, 176);
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.logo li a:hover{
+    color: rgb(241, 241, 241);
+}
+.nav1{
+    list-style: none;
+    display: flex;
+    padding: 5px;
+    margin-left: 5px;
+}
+.nav1 li a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(252, 0, 0);
+    font-size: 25px;
+    margin-right: 20px;
+}
+#acolor{
+    color: rgb(182, 176, 176);
+}
+.nav1 li a:hover{
+color: rgb(255, 255, 255);
+}
+
+form div{
+        display: block;
+        padding: 20px;
+}
+form{
+    margin: 20px;
+    background-color: rgb(56, 59, 59);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    
+
+}
+
+input{
+    width: 30%;
+    height: 30px;
+    display: block;
+}
+#textsend{
+    width: 30%;
+    height: 100px;
+    display: block;
+}
+.but{
+    display: inline-block;
+}
+.area{
+      position: relative;
+      bottom: 17px;
+      display: block;
+}
+
+button{
+    color: rgb(255, 243, 243);
+    border-radius: 30%;
+    background-color: rgb(145, 162, 235);
+    width: 70px;
+    height: 30px;
+    border:rgb(145, 162, 235);
+
+}
+button:hover{
+    background-color: rgb(86, 115, 241);
+}
+
+footer{
+    display: flex;
+    background-color: rgb(56, 59, 59);
+    justify-content: center;
+}
+.foot{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.foot p{
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+.foot a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(145, 162, 235);
+    font-size: 20px;
+}
